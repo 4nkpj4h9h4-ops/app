@@ -2832,13 +2832,15 @@ function showLastResults() {
     // Fond blanc
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, size, size);
-    // P serif élégant (poids normal)
+    // P serif élégant centré
     ctx.fillStyle = '#000000';
-    ctx.font = '400 340px Georgia, "Times New Roman", serif';
-    ctx.fillText('P', 42, 390);
-    // + fin
-    ctx.font = '300 150px Georgia, "Times New Roman", serif';
-    ctx.fillText('+', 278, 270);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '400 320px Georgia, "Times New Roman", serif';
+    ctx.fillText('P', 220, 270);
+    // + fin (superscript en haut à droite du P)
+    ctx.font = '300 130px Georgia, "Times New Roman", serif';
+    ctx.fillText('+', 370, 160);
     const dataUrl = c.toDataURL('image/png');
     // Apple touch icon
     document.getElementById('pwa-icon').href = dataUrl;
